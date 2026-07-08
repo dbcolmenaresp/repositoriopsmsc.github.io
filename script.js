@@ -1,5 +1,9 @@
     (function() {
-        // ---------- REVISTAS Y SITIOS ACADÉMICOS (ingeniería) ----------
+            // Cargar fuentes desde CONFIG
+            let sources = [...CONFIG.sources];
+            let currentFilter = 'all';
+            let currentSearch = '';
+        
         const initialSources = [
             { id: 1, title: "Revista Cientifica de Sistemas e Informática", authors: "Universidad Nacional de San Martín", abstract: "Revista Científica de Sistemas e Informática ( e-ISSN: 2709-992X ), fundada en 2021, es una revista científica de acceso abierto editada por el Fondo Editorial de la Universidad Nacional de San Martín en colaboración con la Facultad de Ingeniería de Sistemas e Informática. Factor de impacto: 8.7", year: 2021, field: "sistemas", type: "revista", link: "https://revistas.unsm.edu.pe/index.php/rcsi" },
             { id: 2, title: "IEEE Transactions on Systems, Man, and Cybernetics", authors: "IEEE SMC", abstract: "Publicación líder en sistemas, cibernética e inteligencia artificial aplicada. Factor de impacto: 8.7", year: 1971, field: "sistemas", type: "revista", link: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021" },
