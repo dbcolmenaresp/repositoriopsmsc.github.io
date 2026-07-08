@@ -249,6 +249,207 @@ const CONFIG = {
             field: "informatica",
             type: "revista",
             link: "https://link.springer.com/journal/11086"
-        }
+        },
+
+        {
+            id: 1,	
+            title: "Revista Científica de Sistemas e Informática",	
+            authors: "Universidad Nacional de San Martín (Perú)",	
+            abstract: "Revista de acceso abierto indexada en Scopus, enfocada en Ciencias de la Computación, Sistemas de Información y Redes.",	
+            year: 2021,	
+            field: "sistemas",	
+            type: "revista",	
+            link: "https://revistas.unsm.edu.pe/index.php/rcsi" 
+        },
+        {
+            id: 2,	
+            title: "Ingeniería: ciencia, tecnología e innovación",	
+            authors: "Universidad Señor de Sipán (Perú)",	
+            abstract: "Revista especializada en Ingeniería Industrial y Ciencias de la Computación, con revisión por pares doble ciego.",	
+            year: 2013,	
+            field: "computacion",	
+            type: "revista",
+            link: "https://revistas.uss.edu.pe/index.php/ING" 
+        },
+        {
+            id: 3,	
+            title: "Revista Científica INGENIAR",	
+            authors: "SOARCI (Ecuador)",
+            abstract: "Publicación arbitrada semestral que abarca todas las áreas de la ingeniería.",	
+            year: 2018,	
+            field: "sistemas",
+            type: "revista",
+            link: "https://journalingeniar.org/"
+        },
+        {
+            id: 4,	
+            title: "Ingeniería Investigación y Tecnología",	
+            authors: "UNAM (México)",	
+            abstract: "Revista trimestral que publica artículos de investigación en diversas ramas de la ingeniería, incluyendo computación y telecomunicaciones.",	
+            year: 1999,	
+            field: "computacion",	
+            type: "revista",	
+            link: "https://www.revistaingenieria.unam.mx/es/" 
+        },
+        {
+            id: 5,	
+            title: "Revista Cubana de Ciencias Informáticas",	
+            authors: "Universidad de las Ciencias Informáticas (Cuba)",	
+            abstract: "Revista dedicada a la investigación en ciencias informáticas y tecnologías de la información.",	
+            year: 2006,	
+            field: "informatica",	
+            type: "revista",	
+            link: "https://rcci.uci.cu/" 
+        },
+        {
+            id: 6,	
+            title: "DYNA",	
+            authors: "Universidad Nacional de Colombia - Sede Medellín",	
+            abstract: "Publicación colombiana con alto impacto, indexada en Publindex A1 y con presencia en Scopus. Cubre temas de ingeniería, incluyendo sistemas e informática.",	
+            year: 1973,	
+            field: "sistemas",	
+            type: "revista",	
+            link: "https://revistas.unal.edu.co/index.php/dyna"
+        },
+        {
+            id: 7,	
+            title: "TecnoLógicas",	
+            authors: "Instituto Tecnológico Metropolitano (Colombia)",
+            abstract: "Revista colombiana indexada en Publindex A2, enfocada en tecnologías de la información y la comunicación.",	
+            year: 2005,	
+            field: "informatica",	
+            type: "revista",	
+            link: "https://revistas.itm.edu.co/index.php/tecnologicas"
+            },
+        {
+            id: 8,	
+            title: "Ingeniería y Competitividad",	
+            authors: "Universidad del Valle (Colombia)",	
+            abstract: "Publicación que aborda temas de ingeniería, con énfasis en la competitividad y la innovación tecnológica.",	
+            year: 2006,	
+            field: "sistemas",	
+            type: "revista",	
+            link: "https://revistaingenieria.univalle.edu.co/"
+        },
+        {
+            id: 9,	
+            title: "Revista de Ingeniería",	
+            authors: "Universidad de los Andes (Colombia)",	
+            abstract: "Publicación colombiana indexada en Publindex A2, que cubre diversas áreas de la ingeniería.",	
+            year: 2006,	
+            field: "sistemas",	
+            type: "revista",	
+            link: "https://revistas.uniandes.edu.co/"
+        },
+        {
+            id: 10,	
+            title: "Revista Facultad de Ingeniería",	
+            authors: "Universidad de Antioquia (Colombia)",	
+            abstract: "Revista con presencia en Scopus, que publica artículos originales sobre ingeniería en general.",	
+            year: 1991,	
+            field: "sistemas",	
+            type: "revista",	
+            link: "https://revistas.udea.edu.co/index.php/ingenieria"
+        },
+        {
+            id: 11,	
+            title: "Ingenius. Revista de Ciencia y Tecnología",
+            authors: "Redalyc",	
+            abstract: "Publicación de acceso abierto que cubre temas de ciencia y tecnología.",	
+            year: 2007,	
+            field: "informatica",	
+            type: "revista",	
+            link: "https://ingenius.ups.edu.ec/"
+        },
+        {
+            id: 12,	
+            title: "Revista de Tecnología",	
+            authors: "Universidad del Bosque (Colombia)",	
+            abstract: "Publicación que aborda temas de tecnología y su aplicación en diversos campos.",	
+            year: 2002,	
+            field: "informatica",	
+            type: "revista",	
+            link: "https://revistas.unbosque.edu.co/index.php/revistatecnologia"
+        },
+        {
+            id: 13,	
+            title: "Revista Científica Ingeniería y Desarrollo",	
+            authors: "Universidad del Norte (Colombia)",	
+            abstract: "Revista que publica artículos de investigación en ingeniería y ciencias aplicadas.",	
+            year: 1995,	
+            field: "sistemas",	
+            type: "revista",	
+            link: "https://rcientificas.uninorte.edu.co/index.php/ingenieria"
+        },
+        {
+            id: 14,	
+            title: "Google Académico (Scholar Google)",	
+            authors: "Google",	
+            abstract: "Buscador académico que indexa una amplia gama de publicaciones científicas, incluyendo revistas en español.",	
+            year: 2004,	
+            field: "sistemas",	
+            type: "sitio",	
+            link: "https://scholar.google.com/
+        },
+        {
+            id: 15,	
+            title: "Portal SciELO",	
+            authors: "Scientific Electronic Library Online",	
+            abstract: "Biblioteca electrónica que cubre una colección selecta de revistas científicas, con un amplio catálogo de publicaciones iberoamericanas en ingeniería.",	
+            year: 1998,	
+            field: "sistemas",	
+            type: "sitio",	
+            link: "https://scielo.org/"
+        },
+        {
+            id: 16,	
+            title: "Latindex",	
+            authors: "Sistema Regional de Información en Línea",	
+            abstract: "Sistema de información sobre revistas de investigación científica de América Latina, el Caribe, España y Portugal. Es un directorio para encontrar revistas de acceso abierto.",	
+            year: 1995,
+            field: "sistemas",	
+            type: "sitio",	
+            link: "https://www.latindex.org/"
+        },
+        {
+            id: 17,	
+            title: "Redalyc	Red de Revistas Científicas de América Latina",	
+            authors: "Realyc",
+            abstract: "Red de revistas científicas de acceso abierto, con un fuerte componente de publicaciones en español y portugués.",	
+            year: 2002,	
+            field: "sistemas",	
+            type: "sitio",	
+            https://www.redalyc.org/
+        },
+        {
+            id: 18,	
+            title: "Dialnet	
+            authors: "Fundación Dialnet",	
+            abstract: "Portal de difusión de la producción científica hispana, con un gran número de revistas de ingeniería.",	
+            year: 2001,	
+            field: "sistemas",	
+            type: "sitio",	
+            link: "https://dialnet.unirioja.es/" 
+        },
+        {
+            id: 19,	
+            title: "DOAJ Infrastructure Services for Open Access",	
+            authors: "Directorio de revistas de acceso abierto.", 
+            abstract: "Es un buen punto de partida para encontrar publicaciones de calidad.",	
+            year: 2003,	
+            field: "sistemas",	
+            type: "sitio",	
+            link: "https://doaj.org/"
+        },
+        {
+            id: 20,	
+            title: "Revista Colombiana de Tecnologías de Avanzada (RCTA)", 
+            authors: "Universidad de Pamplona.",	
+            year: 2018,	
+            field: "computacion",	
+            type: "revista",	
+            link: "https://journalingeniar.org/"
+        },
+        
     ]
 };
