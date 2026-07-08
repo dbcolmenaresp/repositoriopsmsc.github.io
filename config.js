@@ -35,6 +35,7 @@ const CONFIG = {
     },
     
     // LISTA DE FUENTES ACADÉMICAS (fácil de editar)
+    // ---------- REVISTAS Y SITIOS ACADÉMICOS (ingeniería) ----------
     sources: [
 
         { 
