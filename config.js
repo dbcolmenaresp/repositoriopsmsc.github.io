@@ -17,11 +17,12 @@ const CONFIG = {
     
     // Configuración de paginación
     pagination: {
-        itemsPerPage: 12,
+        itemsPerPage: 10,
         enabled: false
     },
     
     // Categorías disponibles
+    //Aqui se pueden agregar nuevas categorias
     categories: {
         fields: {
             sistemas: { label: "Ing. Sistemas", icon: "code", color: "blue" },
