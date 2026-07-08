@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AcadēmIA · Revistas y sitios de ingeniería</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f4fe;
+            background-image: radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.03) 0%, transparent 50%),
+                              radial-gradient(circle at 90% 80%, rgba(0, 200, 255, 0.03) 0%, transparent 50%);
+            min-height: 100vh;
+            color: #0b1a33;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* header */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(0, 60, 130, 0.08);
+        }
+
+        .logo h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(145deg, #0a2a5c, #1b6bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo span {
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: #2c5775;
+            margin-left: 0.75rem;
+            background: rgba(27, 107, 255, 0.08);
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            -webkit-text-fill-color: #1b4b8a;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+            border-radius: 60px;
+            box-shadow: 0 8px 30px rgba(0, 40, 100, 0.08);
+            border: 1px solid rgba(0, 60, 130, 0.08);
+            transition: 0.25s ease;
+        }
+        .search-box:focus-within {
+            box-shadow: 0 8px 30px rgba(0, 80, 200, 0.15);
+            border-color: #1b6bff;
+        }
+        .search-box i {
+            color: #5f7d9c;
+            font-size: 1rem;
+        }
+        .search-box input {
+            border: none;
+            padding: 0.7rem 1rem;
+            font-size: 0.95rem;
+            width: 200px;
+            background: transparent;
+            outline: none;
+            font-weight: 400;
+            color: #0b1a33;
+        }
+        .search-box input::placeholder {
+            color: #8ba1bb;
+            font-weight: 300;
+        }
+        .search-box button {
+            background: #0b2d5c;
+            border: none;
+            color: white;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.2s;
+            letter-spacing: 0.3px;
+            background: linear-gradient(135deg, #0b2d5c, #1b6bff);
+        }
+        .search-box button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px rgba(27, 107, 255, 0.3);
+        }
+
+        /* filtros */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+        .filter-bar .label {
+            font-weight: 600;
+            color: #1f3d5a;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            margin-right: 0.5rem;
+        }
+        .chip {
+            background: white;
+            padding: 0.45rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1f3d5a;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 60, 130, 0.06);
+            transition: all 0.2s;
+            cursor: pointer;
+            backdrop-filter: blur(2px);
+        }
+        .chip i {
+            margin-right: 8px;
+            font-size: 0.75rem;
+            color: #2b6c9e;
+        }
+        .chip:hover, .chip.active {
+            background: #0b2d5c;
+            color: white;
+            border-color: #0b2d5c;
+            box-shadow: 0 8px 18px rgba(0, 60, 150, 0.12);
+        }
+        .chip:hover i, .chip.active i {
+            color: white;
+        }
+
+        /* grid */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 0.8rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 1.8rem 1.6rem 1.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 16px 48px -12px rgba(0, 40, 80, 0.12);
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 32px 60px -20px rgba(0, 60, 150, 0.2);
+            background: white;
+        }
+
+        .badge-link-status {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 0.7rem;
+            background: #eaf0f8;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            color: #1f4b7a;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .badge-link-status.valid {
+            background: #d7f0e3;
+            color: #006b4b;
+        }
+        .badge-link-status.invalid {
+            background: #ffe4e0;
+            color: #b13a2b;
+        }
+        .badge-link-status i {
+            font-size: 0.6rem;
+        }
+
+        .card-badge {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.9rem;
+        }
+        .badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            background: #e6eef9;
+            color: #1f4b7a;
+        }
+        .badge.blue {
+            background: #d4e2ff;
+            color: #003b8f;
+        }
+        .badge.green {
+            background: #d7f0e3;
+            color: #006b4b;
+        }
+        .badge.purple {
+            background: #e7defa;
+            color: #4a2b8a;
+        }
+        .badge.orange {
+            background: #ffe4c2;
+            color: #a3591a;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            color: #071c36;
+        }
+        .card-authors {
+            font-size: 0.9rem;
+            color: #2f557a;
+            margin-bottom: 0.6rem;
+            font-weight: 400;
+        }
+        .card-authors i {
+            margin-right: 5px;
+            color: #1b6bff;
+            font-size: 0.8rem;
+        }
+        .card-abstract {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: #1f3a57;
+            margin-bottom: 1.2rem;
+            flex: 1;
+            opacity: 0.85;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(0, 40, 80, 0.05);
+            padding-top: 1rem;
+            margin-top: 0.2rem;
+        }
+        .card-meta .year {
+            background: #eef3fa;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1f4b7a;
+        }
+        .card-link {
+            text-decoration: none;
+            font-weight: 600;
+            color: #0b2d5c;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+            border-radius: 40px;
+            padding: 0.3rem 1rem 0.3rem 0.8rem;
+            background: rgba(27, 107, 255, 0.02);
+        }
+        .card-link i {
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+        }
+        .card-link:hover {
+            background: #0b2d5c;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 60, 150, 0.15);
+        }
+        .card-link:hover i {
+            transform: translateX(4px);
+            color: white;
+        }
+
+        .footer-note {
+            margin-top: 4rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #3b5f82;
+            border-top: 1px solid rgba(0, 60, 130, 0.06);
+            padding-top: 2.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .footer-note a {
+            color: #1b4b8a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-note a:hover {
+            color: #003bb3;
+            text-decoration: underline;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0b2d5c;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 500;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .toast.error {
+            background: #b13a2b;
+        }
+
+        @media (max-width: 640px) {
+            .header { flex-direction: column; align-items: stretch; gap: 1rem; }
+            .search-box input { width: 140px; }
+            .search-box { padding: 0.3rem 0.3rem 0.3rem 1rem; }
+            .publications-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- header -->
+    <header class="header">
+        <div class="logo">
+            <h1><i class="fas fa-newspaper" style="background: linear-gradient(145deg, #0a2a5c, #1b6bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-right: 6px;"></i> AcadēmIA <span>revistas & sitios</span></h1>
+        </div>
+        <div class="header-actions">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar..." />
+                <button id="searchBtn"><i class="fas fa-arrow-right" style="margin-right: 6px;"></i> Ir</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- filtros -->
+    <div class="filter-bar">
+        <span class="label"><i class="fas fa-tag" style="margin-right: 6px;"></i>Categoría</span>
+        <span class="chip active" data-filter="all"><i class="fas fa-layer-group"></i> Todo</span>
+        <span class="chip" data-filter="revista"><i class="fas fa-book"></i> Revistas</span>
+        <span class="chip" data-filter="sitio"><i class="fas fa-globe"></i> Sitios web</span>
+        <span class="chip" data-filter="sistemas"><i class="fas fa-code"></i> Ing. Sistemas</span>
+        <span class="chip" data-filter="informatica"><i class="fas fa-laptop-code"></i> Informática</span>
+        <span class="chip" data-filter="computacion"><i class="fas fa-microchip"></i> Computación</span>
+    </div>
+
+    <!-- grid -->
+    <div id="publicationsContainer" class="publications-grid"></div>
+
+    <div class="footer-note">
+        <span><i class="fas fa-database"></i> <span id="pubCount">0</span> fuentes indexadas · actualizado 2026</span>
+        <span><i class="fas fa-arrow-up-right-from-square"></i> <a href="#">DOI</a> · <a href="#">arXiv</a> · <a href="#">IEEE</a></span>
+        <span>📌 <a href="#" id="resetLink">restablecer filtros</a></span>
+    </div>
+</div>
+
+<!-- Toast para notificaciones -->
+<div id="toast" class="toast"><i class="fas fa-circle-check"></i> <span id="toastMsg">Listo</span></div>
+
+<script>
+    (function() {
+        // ---------- REVISTAS Y SITIOS ACADÉMICOS (ingeniería) ----------
+        const initialSources = [
+            { id: 1, title: "Revista Cientifica de Sistemas e Informática", authors: "Universidad Nacional de San Martín", abstract: "Revista Científica de Sistemas e Informática ( e-ISSN: 2709-992X ), fundada en 2021, es una revista científica de acceso abierto editada por el Fondo Editorial de la Universidad Nacional de San Martín en colaboración con la Facultad de Ingeniería de Sistemas e Informática. Factor de impacto: 8.7", year: 2021, field: "sistemas", type: "revista", link: "https://revistas.unsm.edu.pe/index.php/rcsi" },
+            { id: 2, title: "IEEE Transactions on Systems, Man, and Cybernetics", authors: "IEEE SMC", abstract: "Publicación líder en sistemas, cibernética e inteligencia artificial aplicada. Factor de impacto: 8.7", year: 1971, field: "sistemas", type: "revista", link: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021" },
+            { id: 3, title: "Journal of Systems and Software", authors: "Elsevier", abstract: "Investigación en metodologías de desarrollo, arquitecturas de software y sistemas de información.", year: 1979, field: "sistemas", type: "revista", link: "https://www.sciencedirect.com/journal/journal-of-systems-and-software" },
+            { id: 4, title: "ACM Computing Surveys", authors: "ACM", abstract: "Revisiones exhaustivas sobre tendencias en computación, algoritmos y sistemas. Factor de impacto: 16.2", year: 1969, field: "computacion", type: "revista", link: "https://dl.acm.org/journal/csur" },
+            { id: 5, title: "IEEE Transactions on Computers", authors: "IEEE Computer Society", abstract: "Arquitecturas de computadores, sistemas digitales, y computación de alto rendimiento.", year: 1952, field: "computacion", type: "revista", link: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=12" },
+            { id: 6, title: "Information and Software Technology", authors: "Elsevier", abstract: "Ingeniería de software, métodos formales, y gestión de proyectos de TI.", year: 1984, field: "informatica", type: "revista", link: "https://www.sciencedirect.com/journal/information-and-software-technology" },
+            { id: 7, title: "IEEE Transactions on Software Engineering", authors: "IEEE", abstract: "Una de las revistas más prestigiosas en ingeniería de software, con artículos sobre métodos, herramientas y métricas.", year: 1975, field: "informatica", type: "revista", link: "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=32" },
+            { id: 8, title: "Journal of Systems Engineering and Electronics", authors: "Springer", abstract: "Sistemas de ingeniería, electrónica y aplicaciones de control.", year: 1990, field: "sistemas", type: "revista", link: "https://link.springer.com/journal/11518" },
+            { id: 9, title: "Computers & Industrial Engineering", authors: "Elsevier", abstract: "Aplicaciones de la computación en procesos industriales, optimización y logística.", year: 1976, field: "computacion", type: "revista", link: "https://www.sciencedirect.com/journal/computers-and-industrial-engineering" },
+            { id: 10, title: "Revista Latinoamericana de Ingeniería de Software", authors: "RELIS", abstract: "Difusión de investigaciones en ingeniería de software en América Latina.", year: 2013, field: "informatica", type: "revista", link: "https://relis.epis.org/index.php/relis" },
+            { id: 11, title: "Portal ACM Digital Library", authors: "ACM", abstract: "Repositorio digital con miles de artículos, conferencias y libros de computación e informática.", year: 1997, field: "computacion", type: "sitio", link: "https://dl.acm.org/" },
+            { id: 12, title: "IEEE Xplore Digital Library", authors: "IEEE", abstract: "Base de datos con publicaciones técnicas de ingeniería eléctrica, electrónica y computación.", year: 1990, field: "sistemas", type: "sitio", link: "https://ieeexplore.ieee.org/" },
+            { id: 13, title: "arXiv.org (Computer Science)", authors: "Cornell University", abstract: "Repositorio de preimpresiones en ciencias de la computación, inteligencia artificial y sistemas.", year: 1991, field: "computacion", type: "sitio", link: "https://arxiv.org/list/cs/recent" },
+            { id: 14, title: "ScienceDirect - Computer Science", authors: "Elsevier", abstract: "Acceso a revistas y libros de ciencias de la computación e ingeniería de sistemas.", year: 1997, field: "sistemas", type: "sitio", link: "https://www.sciencedirect.com/computer-science" },
+            { id: 15, title: "SpringerLink - Engineering", authors: "Springer", abstract: "Colección de revistas y conferencias en todas las áreas de ingeniería, incluyendo computación.", year: 1996, field: "informatica", type: "sitio", link: "https://link.springer.com/engineering" },
+            { id: 16, title: "ResearchGate", authors: "ResearchGate GmbH", abstract: "Red social para investigadores, con acceso a publicaciones de ingeniería y ciencias.", year: 2008, field: "informatica", type: "sitio", link: "https://www.researchgate.net/" },
+            { id: 17, title: "Google Scholar", authors: "Google", abstract: "Buscador académico que indexa revistas, conferencias y patentes de todas las disciplinas.", year: 2004, field: "sistemas", type: "sitio", link: "https://scholar.google.com/" },
+            { id: 18, title: "MDPI - Computers", authors: "MDPI", abstract: "Revista de acceso abierto sobre arquitectura de computadores, sistemas embebidos y redes.", year: 2012, field: "computacion", type: "revista", link: "https://www.mdpi.com/journal/computers" },
+            { id: 19, title: "Revista Ingeniería de Sistemas", authors: "Universidad de Chile", abstract: "Publicación chilena con enfoque en sistemas de información y modelado.", year: 1985, field: "sistemas", type: "revista", link: "https://revistas.uchile.cl/index.php/ris" },
+            { id: 20, title: "Journal of Computer Science and Technology", authors: "Springer", abstract: "Investigación en teoría de la computación, algoritmos y lenguajes de programación.", year: 1986, field: "computacion", type: "revista", link: "https://link.springer.com/journal/11390" },
+            { id: 21, title: "Programming and Computer Software", authors: "Springer", abstract: "Revista sobre lenguajes de programación, compiladores e ingeniería de software.", year: 1975, field: "informatica", type: "revista", link: "https://link.springer.com/journal/11086" },
+        ];
+
+        // Estado
+        let sources = [...initialSources];
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        // DOM refs
+        const container = document.getElementById('publicationsContainer');
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const resetLink = document.getElementById('resetLink');
+        const chips = document.querySelectorAll('.chip');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+        const pubCountSpan = document.getElementById('pubCount');
+
+        // helpers
+        function showToast(msg, isError = false) {
+            toastMsg.textContent = msg;
+            toast.className = 'toast show';
+            if (isError) toast.classList.add('error');
+            else toast.classList.remove('error');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => toast.classList.remove('show'), 3500);
+        }
+
+        async function verifyLink(url) {
+            try {
+                const controller = new AbortController();
+                const timeout = setTimeout(() => controller.abort(), 5000);
+                const res = await fetch(url, { method: 'HEAD', mode: 'no-cors', signal: controller.signal });
+                clearTimeout(timeout);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // renderizar
+        async function renderPublications() {
+            let filtered = [...sources];
+
+            // filtro por tipo (revista/sitio) o disciplina
+            if (currentFilter !== 'all') {
+                if (currentFilter === 'revista' || currentFilter === 'sitio') {
+                    filtered = filtered.filter(s => s.type === currentFilter);
+                } else {
+                    filtered = filtered.filter(s => s.field === currentFilter);
+                }
+            }
+
+            if (currentSearch.trim() !== '') {
+                const term = currentSearch.trim().toLowerCase();
+                filtered = filtered.filter(s =>
+                    s.title.toLowerCase().includes(term) ||
+                    s.authors.toLowerCase().includes(term) ||
+                    (s.abstract && s.abstract.toLowerCase().includes(term))
+                );
+            }
+
+            pubCountSpan.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem; background: rgba(255,255,255,0.3); border-radius: 60px; backdrop-filter: blur(4px);">
+                        <i class="fas fa-search" style="font-size: 2.5rem; color: #1b6bff40; margin-bottom: 0.8rem;"></i>
+                        <p style="font-size: 1.2rem; font-weight: 500; color: #1f3d5a;">No se encontraron fuentes</p>
+                        <p style="color: #4a6f92;">Prueba con otros filtros o términos de búsqueda</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            for (const src of filtered) {
+                const fieldMap = {
+                    'sistemas': 'Ing. Sistemas',
+                    'informatica': 'Informática',
+                    'computacion': 'Computación'
+                };
+                let badgeClass = 'badge';
+                if (src.field === 'sistemas') badgeClass += ' blue';
+                else if (src.field === 'informatica') badgeClass += ' green';
+                else if (src.field === 'computacion') badgeClass += ' purple';
+
+                const typeLabel = src.type === 'revista' ? '📰 Revista' : '🌐 Sitio web';
+                const typeBadge = src.type === 'revista' ? 'orange' : 'blue';
+
+                html += `
+                    <div class="card" data-id="${src.id}" data-link="${src.link}">
+                        <div class="badge-link-status" id="status-${src.id}">
+                            <i class="fas fa-spinner fa-spin"></i> verificando
+                        </div>
+                        <div class="card-badge">
+                            <span class="badge ${typeBadge}"><i class="fas fa-${src.type === 'revista' ? 'book' : 'globe'}"></i> ${typeLabel}</span>
+                            <span class="${badgeClass}"><i class="fas fa-tag"></i> ${fieldMap[src.field] || src.field}</span>
+                            ${src.year ? `<span class="badge" style="background: #eef3fa; color: #1f4b7a;"><i class="far fa-calendar-alt"></i> ${src.year}</span>` : ''}
+                        </div>
+                        <div class="card-title">${src.title}</div>
+                        <div class="card-authors"><i class="fas fa-building"></i> ${src.authors}</div>
+                        <div class="card-abstract">${src.abstract || 'Sin descripción disponible.'}</div>
+                        <div class="card-meta">
+                            <span class="year"><i class="fas fa-${src.type === 'revista' ? 'file-alt' : 'link'}"></i> ${src.type === 'revista' ? 'ISSN' : 'Acceso'}</span>
+                            <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                <a href="${src.link}" target="_blank" class="card-link" rel="noopener noreferrer">
+                                    <i class="fas fa-arrow-up-right-from-square"></i> Visitar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+
+            // Verificar enlaces
+            for (const src of filtered) {
+                const statusEl = document.getElementById(`status-${src.id}`);
+                if (!statusEl) continue;
+                try {
+                    const valid = await verifyLink(src.link);
+                    statusEl.className = `badge-link-status ${valid ? 'valid' : 'invalid'}`;
+                    statusEl.innerHTML = valid
+                        ? `<i class="fas fa-check-circle"></i> enlace válido`
+                        : `<i class="fas fa-exclamation-circle"></i> no accesible`;
+                } catch (e) {
+                    statusEl.className = 'badge-link-status invalid';
+                    statusEl.innerHTML = `<i class="fas fa-exclamation-circle"></i> error de verificación`;
+                }
+            }
+        }
+
+        // Eventos de filtros y búsqueda
+        chips.forEach(chip => {
+            chip.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                currentFilter = filter;
+                chips.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                renderPublications();
+            });
+        });
+
+        searchBtn.addEventListener('click', () => {
+            currentSearch = searchInput.value;
+            renderPublications();
+        });
+        searchInput.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                currentSearch = searchInput.value;
+                renderPublications();
+            }
+        });
+
+        resetLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentFilter = 'all';
+            currentSearch = '';
+            searchInput.value = '';
+            chips.forEach(c => c.classList.remove('active'));
+            document.querySelector('.chip[data-filter="all"]').classList.add('active');
+            renderPublications();
+        });
+
+        // Inicializar
+        renderPublications();
+    })();
+</script>
+</body>
+</html>
+```
+### Directorio de Revistas y Sitios Académicos
+
+Este directorio te permite explorar y filtrar una lista seleccionada de fuentes de información en ingeniería.
+
+*   **Navegación por Filtros:** Utiliza los chips en la barra de filtros para ver solo **Revistas**, solo **Sitios web**, o para enfocarte en una disciplina específica como Ingeniería de Sistemas, Informática o Computación.
+*   **Búsqueda Rápida:** El campo de búsqueda te permite filtrar las fuentes por nombre, editorial o palabras clave en la descripción. Presiona "Ir" o la tecla "Enter" para aplicar el filtro.
+*   **Información y Verificación:** Cada tarjeta muestra el tipo de fuente, disciplina, año de fundación, una breve descripción y un enlace. Un indicador visual (verde "enlace válido" o rojo "no accesible") te informa sobre el estado de cada URL.
