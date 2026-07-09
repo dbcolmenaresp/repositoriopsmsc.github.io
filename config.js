@@ -419,7 +419,7 @@ const CONFIG = {
             year: 2002,	
             field: "sistemas",	
             type: "sitio",	
-            https://www.redalyc.org/"
+            link: "https://www.redalyc.org/"
         },
         {
             id: 39,	
@@ -434,8 +434,8 @@ const CONFIG = {
         {
             id: 40,	
             title: "DOAJ Infrastructure Services for Open Access",	
-            authors: "Directorio de revistas de acceso abierto.", 
-            abstract: "Es un buen punto de partida para encontrar publicaciones de calidad.",	
+            authors: "DOAJ Infrastructure Services", 
+            abstract: "Directorio de revistas de acceso abierto. Es un buen punto de partida para encontrar publicaciones de calidad.",	
             year: 2003,	
             field: "sistemas",	
             type: "sitio",	
@@ -445,7 +445,7 @@ const CONFIG = {
             id: 41,	
             title: "Revista Colombiana de Tecnologías de Avanzada (RCTA)", 
             authors: "Universidad de Pamplona.",	
-            abstract: " ",
+            abstract: "Publicación colombiana enfocada en tecnologías avanzadas, ingeniería y ciencias aplicadas.",
             year: 2018,	
             field: "computacion",	
             type: "revista",	
