@@ -1,7 +1,7 @@
 // config.js - Configuración centralizada
 const CONFIG = {
     // Título del sitio
-    siteTitle: "AcadēmIA",
+    siteTitle: "AcadēmiA",
     siteSubtitle: "revistas & sitios",
     
     // Metadata
