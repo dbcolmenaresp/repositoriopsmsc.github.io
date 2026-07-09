@@ -453,3 +453,4 @@ const CONFIG = {
         
     ]
 };
+module.exports = config;
