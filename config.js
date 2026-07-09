@@ -413,7 +413,7 @@ const CONFIG = {
         },
         {
             id: 38,	
-            title: "Redalyc	Red de Revistas Científicas de América Latina",	
+            title: "Redalyc Red de Revistas Científicas de América Latina",	
             authors: "Realyc",
             abstract: "Red de revistas científicas de acceso abierto, con un fuerte componente de publicaciones en español y portugués.",	
             year: 2002,	
