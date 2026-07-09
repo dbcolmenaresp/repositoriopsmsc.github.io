@@ -462,14 +462,14 @@ const CONFIG = {
             link: "https://sebokwiki.org/wiki/Guide_to_the_Systems_Engineering_Body_of_Knowledge_(SEBoK)"
         },
         {
-            id: 43,	
-            title: "Guide to the Systems Engineering Body of Knowledge (SEBoK)", 
-            authors: "INCOSE, the IEEE Systems Council, and Stevens Institute of Technology.",
-            abstract: "The SEBoK provides a guide to the key knowledge sources and references of systems engineering organized and explained to assist a wide variety of individuals. It is a living product, accepting community input continuously, with regular refreshes and updates. The SEBoK is not a compendium but instead references existing literature.",
+            id: 43,
+            title: " International Journal of Computer Engineering in Research Trends (IJCERT)",
+            authors: "Dr. P. Venkata Krishna Professor in the Dept. of Computer Science, Sri Padmavati Mahila University, Tirupati, India.",
+            abstract: "The International Journal of Computer Engineering in Research Trends (IJCERT) is a globally recognized, peer-reviewed, open-access journal dedicated to publishing high-quality research in computer engineering, technology, and applied sciences. With ISSN(E): 2349-7084, IJCERT serves as a premier platform for researchers, scholars, industry professionals, academicians, and students, providing an avenue for publishing innovative and impactful research in the field.",
             year: 2026,	
-            field: "sistemas",	
-            type: "sitio",	
-            link: "https://sebokwiki.org/wiki/Guide_to_the_Systems_Engineering_Body_of_Knowledge_(SEBoK)"
+            field: "computacion",	
+            type: "revista",	
+            link: "https://www.ijcert.org/index.php/ijcert"
         },
     ]
 };
