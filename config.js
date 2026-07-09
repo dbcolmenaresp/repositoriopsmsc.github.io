@@ -320,7 +320,7 @@ const CONFIG = {
             field: "informatica",	
             type: "revista",	
             link: "https://revistas.itm.edu.co/index.php/tecnologicas"
-            },
+        },
         {
             id: 29,	
             title: "Ingeniería y Competitividad",	
