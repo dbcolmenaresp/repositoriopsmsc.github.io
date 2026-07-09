@@ -451,7 +451,16 @@ const CONFIG = {
             type: "revista",	
             link: "https://journalingeniar.org/"
         },
-        
+        {
+            id: 42,	
+            title: "Guide to the Systems Engineering Body of Knowledge (SEBoK)", 
+            authors: "INCOSE, the IEEE Systems Council, and Stevens Institute of Technology.",
+            abstract: "The SEBoK provides a guide to the key knowledge sources and references of systems engineering organized and explained to assist a wide variety of individuals. It is a living product, accepting community input continuously, with regular refreshes and updates. The SEBoK is not a compendium but instead references existing literature.",
+            year: 2026,	
+            field: "sistemas",	
+            type: "sitio",	
+            link: "https://sebokwiki.org/wiki/Guide_to_the_Systems_Engineering_Body_of_Knowledge_(SEBoK)"
+        },
     ]
 };
 module.exports = CONFIG;
