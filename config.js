@@ -389,7 +389,7 @@ const CONFIG = {
             year: 2004,	
             field: "sistemas",	
             type: "sitio",	
-            link: "https://scholar.google.com/
+            link: "https://scholar.google.com/"
         },
         {
             id: 36,	
@@ -419,7 +419,7 @@ const CONFIG = {
             year: 2002,	
             field: "sistemas",	
             type: "sitio",	
-            https://www.redalyc.org/
+            https://www.redalyc.org/"
         },
         {
             id: 39,	
