@@ -423,7 +423,7 @@ const CONFIG = {
         },
         {
             id: 39,	
-            title: "Dialnet	
+            title: "Dialnet",	
             authors: "Fundación Dialnet",	
             abstract: "Portal de difusión de la producción científica hispana, con un gran número de revistas de ingeniería.",	
             year: 2001,	
@@ -445,6 +445,7 @@ const CONFIG = {
             id: 41,	
             title: "Revista Colombiana de Tecnologías de Avanzada (RCTA)", 
             authors: "Universidad de Pamplona.",	
+            abstract: " ",
             year: 2018,	
             field: "computacion",	
             type: "revista",	
@@ -453,4 +454,4 @@ const CONFIG = {
         
     ]
 };
-module.exports = config;
+module.exports = CONFIG;
