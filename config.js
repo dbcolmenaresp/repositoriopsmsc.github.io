@@ -471,7 +471,7 @@ const CONFIG = {
             type: "revista",	
             link: "https://www.ijcert.org/index.php/ijcert"
         },
-                {
+        {
             id: 44,
             title: "Revista Venezolana de Computación (ReVeCom)",
             authors: "Sociedad Venezolana de Computación (SVC).",
@@ -481,7 +481,16 @@ const CONFIG = {
             type: "revista",	
             link: "https://saber.ucv.ve/ojs/index.php/rev_vcomp/issue/view/3043"
         },
-
+        {
+            id: 45,
+            title: "Business Analysis Body of Knowledge® (BABOK® Guide)",
+            authors: "International Institute of Business Analysis (IIBA).",
+            abstract: "The globally recognized standard for the practice of business analysis guiding professionals in their work and adopted by enterprises to achieve better business outcomes.",
+            year: 2026,
+            field: "sistemas",	
+            type: "sitio",	
+            link: "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/"
+        },
     ]
 };
 module.exports = CONFIG;
