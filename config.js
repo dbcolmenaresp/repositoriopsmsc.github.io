@@ -104,7 +104,7 @@ const CONFIG = {
             id: 7,
             title: "IEEE Transactions on Software Engineering",
             authors: "IEEE",
-            abstract: "Una de las revistas más prestigiosas en ingeniería de software, con artículos sobre métodos, herramientas y métricas.",
+            abstract: "Una de las revistas más prestigiosas en ingeniería de software, con artículos sobre métodos, herramientas y métricas. Publicación de impacto mundial, centrada en la especificación, diseño, desarrollo, pruebas, mantenimiento y gestión de sistemas de software complejos.",
             year: 1975,
             field: "informatica",
             type: "revista",
@@ -463,7 +463,7 @@ const CONFIG = {
         },
         {
             id: 43,
-            title: " International Journal of Computer Engineering in Research Trends (IJCERT)",
+            title: "International Journal of Computer Engineering in Research Trends (IJCERT)",
             authors: "Dr. P. Venkata Krishna Professor in the Dept. of Computer Science, Sri Padmavati Mahila University, Tirupati, India.",
             abstract: "The International Journal of Computer Engineering in Research Trends (IJCERT) is a globally recognized, peer-reviewed, open-access journal dedicated to publishing high-quality research in computer engineering, technology, and applied sciences. With ISSN(E): 2349-7084, IJCERT serves as a premier platform for researchers, scholars, industry professionals, academicians, and students, providing an avenue for publishing innovative and impactful research in the field.",
             year: 2026,	
@@ -471,6 +471,17 @@ const CONFIG = {
             type: "revista",	
             link: "https://www.ijcert.org/index.php/ijcert"
         },
+                {
+            id: 44,
+            title: "Revista Venezolana de Computación (ReVeCom)",
+            authors: "Sociedad Venezolana de Computación (SVC).",
+            abstract: "ReVeCom (Revista Venezolana de Computación) es la primera revista venezolana arbitrada, periódica, digital, orienta a la publicación de resultados de investigación en el campo de la computación. ReVeCom fue creada por la SVC (Sociedad Venezolana de Computación) y tiene entre sus objetivos hacer conocer los trabajos de alta calidad investigativa que se realizan a nivel nacional, latinoamericano e internacional. La revista permite la divulgación de artículos con aporte original en castellano o inglés.",
+            year: 2014,
+            field: "computacion",	
+            type: "revista",	
+            link: "https://saber.ucv.ve/ojs/index.php/rev_vcomp/issue/view/3043"
+        },
+
     ]
 };
 module.exports = CONFIG;
